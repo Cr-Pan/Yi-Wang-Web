@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cr-pan.github.io/Yi-Wang-Web/sitemap.xml
