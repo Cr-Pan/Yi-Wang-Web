@@ -5,7 +5,7 @@ Personal academic website for Yi Wang, an Economics Ph.D. student at The Ohio St
 ## Update content
 
 Most public text is centralized in `content/site-content.md`. The portrait is stored at
-`public/images/yi-wang-portrait.png`, and the downloadable CV is `public/Yi-Wang-CV.pdf`.
+`public/images/yi-wang-portrait.png`. The CV is presented as an HTML page rather than a downloadable file.
 
 ## Local development
 

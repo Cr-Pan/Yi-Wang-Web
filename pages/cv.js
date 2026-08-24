@@ -1,23 +1,11 @@
-import { useRouter } from 'next/router'
 import SiteLayout from '../components/SiteLayout'
-import { withBasePath } from '../lib/assetPath'
 import { makePageStaticProps } from '../lib/siteContent'
 
 export const getStaticProps = makePageStaticProps('cv')
 
 export default function CV({ site, pageContent }) {
-  const router = useRouter()
-  const cv = withBasePath(site.cvPath, router.basePath)
-
   return (
     <SiteLayout site={site} pageTitle={pageContent.title} pageDescription={pageContent.subtitle}>
-      <div className="cv-toolbar">
-        <p>{pageContent.downloadNote}</p>
-        <a className="button button-primary" href={cv} target="_blank" rel="noreferrer">
-          Download CV <span aria-hidden="true">PDF</span>
-        </a>
-      </div>
-
       <div className="cv-layout">
         <aside className="cv-sidebar">
           <section>

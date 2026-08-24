@@ -9,45 +9,25 @@ export default function Research({ site, pageContent }) {
       site={site}
       pageTitle={pageContent.title}
       pageDescription={pageContent.subtitle}
+      showHeading={false}
     >
-      <section className="research-overview" aria-labelledby="research-overview-title">
-        <div className="overview-copy">
-          <p className="eyebrow">Research interests</p>
-          <h2 id="research-overview-title">{pageContent.overviewTitle}</h2>
-        </div>
-        <ul className="interest-list">
-          {pageContent.interests.map((interest) => <li key={interest}>{interest}</li>)}
-        </ul>
-      </section>
-
-      <section className="project-section" aria-labelledby="projects-title">
-        <div className="section-index">
-          <span>01</span>
-          <h2 id="projects-title">Research project</h2>
-        </div>
-
+      <header className="research-page-heading">
+        <h1>{pageContent.title}</h1>
+      </header>
+      <section className="single-research" aria-label="Research project">
         {pageContent.projects.map((project) => (
-          <article className="research-project" key={project.title}>
-            <div className="project-meta">
-              <p>{project.status}</p>
-              <p>{project.period}</p>
-            </div>
-            <div className="project-body">
-              <h3>{project.title}</h3>
+          <article key={project.title}>
+            <p className="research-meta">
+              <span>{project.status}</span>
+              <span>{project.period}</span>
+            </p>
+            <div className="single-research-body">
+              <h2>{project.title}</h2>
               <p className="project-abstract">{project.abstract}</p>
-              <h4>Research questions</h4>
-              <ul>
-                {project.questions.map((question) => <li key={question}>{question}</li>)}
-              </ul>
             </div>
           </article>
         ))}
       </section>
-
-      <aside className="research-note">
-        <p className="eyebrow">Research profile</p>
-        <p>{pageContent.note}</p>
-      </aside>
     </SiteLayout>
   )
 }
